@@ -14,16 +14,17 @@ npm install iefw-native
 
 ```js
 const ie = require('iefw-native');
-const iecloud = new ie();
+const iecloud = new Upload();
 
-const file = './path/to/file';
+const file = './lol';
 
-iecloud.uploadFile(file)
-  .then(() => {
+iecloud.uploadFile(filePath)
+  .then((fileUrl) => {
     console.log('File uploaded successfully!');
+    console.log('File URL', fileUrl);
   })
   .catch((error) => {
-    console.error('Unable to send the file:', error);
+    console.error('An error occurred while uploading the file:', error);
   });
-
+  
 ```
